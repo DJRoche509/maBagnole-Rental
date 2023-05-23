@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: normal 400 24px 35px 'Kaushan Script', sans-serif;
+    border-radius: 0px;
+    color: rgba(110, 204, 224, 0.91);
+}
+
+.container{
+    height: 1024px;
+    width: 1440px;
+
+}
