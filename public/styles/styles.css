@@ -1,16 +1,138 @@
+/* Importing Google font style: Kaushan Script */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-body {
-    font: normal 400 24px 35px 'Kaushan Script', sans-serif;
-    border-radius: 0px;
-    color: rgba(110, 204, 224, 0.91);
+    border-radius: 10px;
 }
 
+:root{
+    --nav-box-backgrnd: #3E3B3B;
+    --text-color: rgba(110, 204, 224, 0.91);
+}
+
+span{
+    font-style: normal; 
+    content: \007C; color: #1A1717;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font: 400 20px 'Kaushan Script', cursive;
+    color: var(--text-color);
+    /* text-align: center; */
+    align-content: space-around;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+hr{
+    border-color:var(--nav-box-backgrnd)
+}
 .container{
     height: 1024px;
-    width: 1440px;
-
+    max-width: 1440px;
+    background: #1A1717;
+    /* background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 100%, 0.8),
+    hsla(220, 9%, 7%, 0.2)); */
 }
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: var(--text-color) ;
+}
+
+.nav-title{
+    display: flex;
+    min-width: 9vw;
+    min-height: 42px;
+    background-color: var(--nav-box-backgrnd);
+    align-items: center;
+    justify-content: center;
+    text-shadow:4px 3px #16211f;
+}
+
+.nav-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 35vw;
+    min-height: 42px;
+    background-color: var(--nav-box-backgrnd);
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 55px;
+}
+
+.nav-lang{
+    display: flex;
+    min-width: 9vw;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    max-height: 53px;
+    background-color:var(--nav-box-backgrnd)
+}
+
+/* CSS for globe - Imported from Google fonts */
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.nav-login{
+    display: flex;
+    min-width: 10vw;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    background-color:var(--nav-box-backgrnd);
+}
+
+.pick_return{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: fit-content;
+    gap: 30px ;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pickup, .return{
+    display: flex;
+    width: 475px;
+    height: 67px;
+    justify-content: space-between;
+    background-color: var(--nav-box-backgrnd);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* .return{
+    width: 475px;
+    height: 67px;
+    background-color: var(--nav-box-backgrnd);
+} */
