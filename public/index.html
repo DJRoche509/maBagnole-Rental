@@ -41,42 +41,51 @@
 
         <section class="pick_return">
             <div class="pickup">
-                <div class="pickup_date">
-                    <div class="topPickDate">Pick up Date</div>
-                    <div class="bottomTimeDate">Today</div>
+                <div class="pickup_date col">
+                    <h6 class="topPickDate">Pick up Date</h6>
+                    <input type="date" id="pickup-date" class="bottomTimeDate" name="pickup-date" >
                 </div>
-                <div class="pickup_time">
-                    <div class="topPickDate leftTopPickDate">Pick up time</div>
-                    <div>12:00 PM Noon</div>
+                <div class="pickup_time col">
+                    <h6 class="topPickDate leftTopPickDate">Pick up time</h6>
+                    <input type="time" id="pickup-time" name="pickup-time">
                 </div>
             </div>
             <div class="return">
-                <div class="return_date">
-                    <div class="topPickDate">Return Date</div>
-                    <div class="bottomTimeDate">5/May/23</div>
+                <div class="return_date col">
+                    <h6 class="topPickDate">Return Date</h6>
+                    <input type="date" id="return-date" class="bottomTimeDate" name="return-date" >
                 </div>
-                <div class="return_time">
-                    <div class="topPickDate leftTopPickDate">Return time</div>
-                    <div>3:00 PM </div>
+                <div class="return_time col">
+                    <h6 class="topPickDate leftTopPickDate">Return time</h6>
+                    <input type="time" id="pickup-time" name="pickup-time">
                 </div>
             </div>            
         </section>
         
         <!--==================== MAIN ====================-->
         <main class="main">
-            <!--==================== HOME ====================-->
+            <!--==================== CAR DISPLAY ====================-->
             <section class="single_car_display" id="car">
+                <div class="arrow backward">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
                 <img src="./img/bugatti-la-voiture-noire-for-top-5.jpg" alt="">
+                <div class="arrow forward">
+                    <div class="arrow-top"></div>
+                    <div class="arrow-bottom"></div>
+                </div>
             </section>
             
-            <!--================== BOOKING Button ==================-->
-            <button class="booking" type="submit">Book this Bagnole</button>
-            
-            <!--==================== ABOUT ====================-->
-            <section class="about section" id="about">
-                
+            <!--==================== CAR INFO ====================-->
+            <section class="carInfo section" id="info">
+                <div></div>
             </section>
 
+            <!--================== RESERVE Button ==================-->
+            <button class="reserve" id="booking-form" type="submit">Reserve this Bagnole</button>
+            
+            <br><hr>
             <!--==================== POPULAR ====================-->
             <section class="popular section" id="popular">
                 
@@ -112,16 +121,20 @@
         <!--========== SCROLL UP ==========-->
 
 
-        <!--=============== SCROLL REVEAL ===============-->
-        <script src=""></script>
+        <!--=============== AXIOS JS ===============-->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        
+        <!--=============== BODY PARSER/CDN Lib JS ===============-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/body-parser/1.19.0/body-parser.min.js"></script>
 
-        <!--=============== SWIPER JS ===============-->
-        <script src=""></script>
+        <!--=============== ARROW JS ===============-->
+        <script src="https://cpwebassets.codepen.io/assets/editor/iframe/iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js"></script>
 
-        <!--=============== MIXITUP JS ===============-->
-        <script src=""></script>
+        <!--=============== IONICONS JS ===============-->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <!-- <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
 
         <!--=============== MAIN JS ===============-->
-        <script src=""></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>
