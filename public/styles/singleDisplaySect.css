@@ -93,3 +93,14 @@
   /* transform: translateX(-5%) scale(0.9); */
   transform: rotate(0.50 turn);  
 }
+
+.carInfo_section{
+  display: flex;
+  flex-direction: column;
+  width: 615px;
+  margin: auto;
+  margin-top: 40px;
+  letter-spacing: .1em;
+  word-spacing: .2em;
+  gap: 3px;
+}
