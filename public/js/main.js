@@ -13,6 +13,19 @@ const carReservation = event => {
     const returnDate = document.getElementById("return-date").value;
     const returnTime = document.getElementById("return-time").value;
 
+    // Submit the form data to the server using Axios
+    axios.post("/booking", {
+        pickupDate,
+        pickupTime,
+        returnDate,
+        returnTime,
+    })
+    .then(response => {
+        // Redirect the user to the confirmation page
+        window.location.href = "/confirmation.html";
+    })
+    .catch(error => {console.error(error);    });
+
     // Log out the selected date and time values
     console.log(`Pick-up date: ${pickupDate}`);
     console.log(`Pick-up time: ${pickupTime}`);
