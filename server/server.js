@@ -1,7 +1,8 @@
 const express = require("express");
-const { Sequelize, DataTypes } = require("sequelize");
+const cors = require('cors');
 
-const PORT = process.env.PORT || 4000;
+
+const {SERVER_PORT} = process.env;
 
 // Create a new Sequelize instance
 const sequelize = new Sequelize("database", "username", "password", {
@@ -9,13 +10,24 @@ const sequelize = new Sequelize("database", "username", "password", {
   dialect: "mysql",
 });
 
-// Define a new model for the date and time
-const DateTime = sequelize.define("DateTime", {
-  datetime: {
-    type: DataTypes.DATE,
+// Define a new model for the booking
+const Booking = sequelize.define("Booking", {
+  pickupDate: {
+    type: DataTypes.DATEONLY,
     allowNull: false,
   },
-});
+  pickupTime: {
+    type: DataTypes.TIME,
+    allowNull: false,
+  },
+  returnDate: {
+    type: DataTypes.DATEONLY,
+    allowNull: false,
+  },
+  returnTime: {
+    type: DataTypes.TIME,
+    allowNull: false,
+ });
 
 // Sync the model with the database
 sequelize.sync();
@@ -23,21 +35,24 @@ sequelize.sync();
 // Create a new Express app
 const app = express();
 
-// Define a route that returns the current date and time as a JSON object
-app.get("/datetime", async (req, res), next) => {
-    try {
-        // Get the current date and time
-        const now = new Date();
+// Use the body-parser middleware to parse form data
+app.use(bodyParser.urlencoded({ extended: true }));
 
-        // Create a new DateTime record in the database
-        await DateTime.create({ datetime: now });
+// Define a route that handles the form submission
+app.post("/booking", async (req, res), next) => {
+  try {
+    // Get the selected date and time values from the request body
+    const { pickupDate, pickupTime, returnDate, returnTime } = req.body;
 
-        // Return the current date and time as a JSON object
-        res.json({ datetime: now });
-    } catch (error) {
-        next(error);
-    }
-};
+    // Create a new Booking record in the database
+    await Booking.create({ pickupDate, pickupTime, returnDate, returnTime });
+
+    // Redirect the user to a confirmation page
+    res.redirect("/confirmation.html");
+  } catch (error) {
+    next(error);
+  }
+});
 
 // Start the server
 app.listen(PORT, () => {
