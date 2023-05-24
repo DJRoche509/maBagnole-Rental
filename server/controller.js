@@ -34,12 +34,14 @@ module.exports = {
             CREATE TABLE cars(
                 car_id Serial PRIMARY KEY,
                 year INTEGER ,
-                make VARCHAR(35) NOT NULL,
-                model VARCHAR(35) NOT NULL,
+                make VARCHAR(55) NOT NULL,
+                model VARCHAR(55) NOT NULL,
+                color VARCHAR(55),
+                size VARCHAR(55),
                 imgage VARCHAR(250),
                 mileage INTEGER,
-                size VARCHAR(35),
-                status VARCHAR(25),
+                size VARCHAR(55),
+                status VARCHAR(35),
                 cost INT NOT NULL
             );
                 
@@ -55,17 +57,17 @@ module.exports = {
             );
 
             
-            INSERT INTO cars (year, make, model, image,mileage,status,cost)
-            VALUES (2023,'Bugatti','La Voiture Noire','https://carleasespecialoffers.co.uk/assets/images/bugatti-la-voiture-noire-for-top-5.jpg',55,'Available',350),
-                (2021,'Peugeot','907','https://d.scdn.gr/images/sku_main_images/009099/9099895/20160525135916_bburago_1_18_peugeot_907_v12.jpeg',2700,'Available',165),
-                (2006,'Peugeot','908 RC','https://www.topgear.com/sites/default/files/news-listicle/image/peugeot_908_rc_concept_front34.jpg?w=1290&h=726',22802,'Available',285),
-                (2020,'Renault','Twingo E-Tech RC','https://www.renaultgroup.com/wp-content/uploads/2020/11/nouvelle_twingo_electric-1.jpg',9640,'Available',85),
-                (2022,'Renault','Arkana','https://www.renaultgroup.com/wp-content/uploads/2023/04/r-dam_1418131.jpg',2733,'Available',125),
-                (2010,'Citroen','Survolt','https://i0.wp.com/www.car-revs-daily.com/wp-content/uploads/2014/11/Concept-Flashback-2010-Citroen-Survolt-12.jpg?resize=1600%2C747&ssl=1',29530,'Available',325),
-                (2016,'BMW','750LI','https://www.autotrader.com/wp-content/uploads/2020/02/245017.jpg',14121,'Available',145),
-                (2023,'Jeep','Gladiator','https://www.carscoops.com/wp-content/uploads/2022/01/Jeep-Gladiator-1.jpg',15,'Available',178),
-                (2021,'Lincoln','Navigator L','https://images.dealer.com/ddc/vehicles/2021/Lincoln/Navigator%20L/SUV/perspective/front-left/2021_24.png',3689,'Available',210),
-                (2023,'Toyota','Tundra TRD Pro','https://alcf.s3.us-west-1.amazonaws.com/_custom/2023/toyota/tundra/2023-toyota-tundra-main.png',5,'Available',160);
+            INSERT INTO cars (year, make, model, color,size,image,mileage,status,cost)
+            VALUES (2023,'Bugatti','La Voiture Noire','black','super-compact, coupe','https://carleasespecialoffers.co.uk/assets/images/bugatti-la-voiture-noire-for-top-5.jpg',55,'Available',350),
+                (2021,'Peugeot','907','black','super-compact','https://d.scdn.gr/images/sku_main_images/009099/9099895/20160525135916_bburago_1_18_peugeot_907_v12.jpeg',2700,'Available',165),
+                (2006,'Peugeot','908 RC','dark charcoal','midsize','https://www.topgear.com/sites/default/files/news-listicle/image/peugeot_908_rc_concept_front34.jpg?w=1290&h=726',22802,'Available',285),
+                (2020,'Renault','Twingo E-Tech RC','white','mini','https://www.renaultgroup.com/wp-content/uploads/2020/11/nouvelle_twingo_electric-1.jpg',9640,'Available',85),
+                (2022,'Renault','Arkana','blue','compact, coupe','https://www.renaultgroup.com/wp-content/uploads/2023/04/r-dam_1418131.jpg',2733,'Available',125),
+                (2010,'Citroen','Survolt','black, turquoise','super-compact, coupe','https://i0.wp.com/www.car-revs-daily.com/wp-content/uploads/2014/11/Concept-Flashback-2010-Citroen-Survolt-12.jpg?resize=1600%2C747&ssl=1',29530,'Available',325),
+                (2016,'BMW','750LI','dark grey','midsize, compact','https://www.autotrader.com/wp-content/uploads/2020/02/245017.jpg',14121,'Available',145),
+                (2023,'Jeep','Gladiator','black gold','pickup, large','https://www.carscoops.com/wp-content/uploads/2022/01/Jeep-Gladiator-1.jpg',15,'Available',178),
+                (2021,'Lincoln','Navigator L','blue','very large, family-size','https://images.dealer.com/ddc/vehicles/2021/Lincoln/Navigator%20L/SUV/perspective/front-left/2021_24.png',3689,'Available',210),
+                (2023,'Toyota','Tundra TRD Pro','dark blue','pickup, very large','https://alcf.s3.us-west-1.amazonaws.com/_custom/2023/toyota/tundra/2023-toyota-tundra-main.png',5,'Available',160);
 
             INSERT INTO customers (fname, lname, age, email, phonenumber, address, city, state, zipcode)
             VALUES ('Juliane', 'Jones', 32,'juliane.jones@yahoo.com', '3347927472', '123 S Beach Ave', 'Miami', 'FL', 33213),
