@@ -1,6 +1,9 @@
 /* Importing Google font style: Kaushan Script */
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
+/* Importing new styling sheet */
+@import "singleDisplaySect.css";
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -21,6 +24,7 @@ span{
 body {
     display: flex;
     flex-direction: column;
+    /* flex-wrap: wrap; */
     font: 400 20px sans-serif;
     color: var(--text-color);
     align-content: space-around;
@@ -57,12 +61,18 @@ a{
     color: var(--text-color) ;
 }
 
+a:hover{
+    border-bottom: 1px solid var(--text-color) ;
+    border-radius: 0;
+    color:rgba(255, 255, 255, 0.568)
+}
+
 .nav-title{
     display: flex;
     min-width: 13vw;
     min-height: 42px;
     font: 400 20px 'Kaushan Script', normal;
-    background-color: var(--nav-box-backgrnd);
+    /* background-color: var(--nav-box-backgrnd); */
     align-items: center;
     justify-content: center;
     text-shadow:4px 3px #16211f;
@@ -113,9 +123,9 @@ a{
 
 .pick_return{
     display: flex;
-    flex-direction: row;
+    /* flex-grow: 23px; */
     width: auto;
-    height: fit-content;
+    min-height: 7vh;
     gap: 30px ;
     margin-top: 70px;
     margin-right: auto;
@@ -124,8 +134,8 @@ a{
 
 .pickup, .return{
     display: flex;
-    width: 475px;
-    height: 67px;
+    min-width: 32vw;
+    min-height: 67px;
     justify-content: space-between;
     background-color: var(--nav-box-backgrnd);
     padding-left: 15px;
@@ -134,48 +144,57 @@ a{
 }
 
 .topPickDate{
-    max-width: 90px;
+    /* max-width: 90px; */
     height: 23px;
-    font-weight: 400;
-    font-size: 16px;
+    font-size: .7em;
 }
 
 .leftTopPickDate{
     position: relative;
-    RIGHT: 100px;    
+    right: 70%;    
 }
 
 .bottomTimeDate{
     max-width: 135px;
     height: 29px;
     position: relative;
-    left: 110px;
+    left: 70%;
 }
 
-.single_car_display{
-    display: flex;
-    padding-top: 100px;
-    justify-content: center;
+.col input{
+    background-color: hsl(0, 2%, 50%);
+    color: var(--text-color);
 }
 
-.single_car_display img{
-    max-width: 79vw;
-    max-height: 60vh;
-    border-radius: 215px;
-     margin: auto;
-}
 
-.booking{
+.reserve{
     display: flex;
     max-width: 15vw;
-    height: 6vh;
+    min-height: 6vh;
     background-color: var(--nav-box-backgrnd);
     padding: 10px;
     position: relative;
     top: 60px;
     justify-content: center;
     margin: auto;
-    font: 400 20px 'Kaushan Script', normal;
+    margin-bottom: 5%;
+    font-family: 'Kaushan Script', normal;
+    font-size: 18px;
     color: rgba(255, 255, 255, 0.568); 
     box-shadow: 0px 0px 4px 1px rgb(15, 58, 58); /*rgba(110, 204, 224, 0.91)*/
 }
+
+.caretButton ion-icon{
+    display: flex;
+    margin: 20px;
+    /* margin-top:40px ; */
+    width: 120px;
+    height: 240px;
+    color:#575050;
+    overflow:hidden;
+    align-items: center;
+    box-shadow: 0px 0px 10px .1px var(--nav-box-backgrnd); /*rgba(110, 204, 224, 0.91)*/
+}
+    /* Hardcoded transition time */
+    /* --transition-time: .15s; */
+
