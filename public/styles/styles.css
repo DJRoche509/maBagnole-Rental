@@ -3,7 +3,7 @@
 
 /* Importing new styling sheet */
 @import "singleDisplaySect.css";
-
+@import "contact.css";
 *{
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +20,6 @@
 body {
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     font: 400 20px sans-serif;
     color: var(--text-color);
     justify-content: center;
@@ -40,9 +39,8 @@ hr{
     border-color:var(--nav-box-backgrnd)
 }
 .container{
-    height: auto;
+    min-height: 980px;
     max-width: 1100px;
-    /* background: #1A1717; */
     background-image: linear-gradient(
         to bottom,
         hsla(220, 9%, 7%, 0.7),
@@ -60,7 +58,6 @@ hr{
 
 nav{
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -85,18 +82,15 @@ a:hover{
     min-width: 13vw;
     min-height: 42px;
     font: 400 20px 'Kaushan Script', normal;
-    /* align-items: center; */
     justify-content: center;
     align-items: center;
-    text-shadow:4px 3px #16211f;
+    text-shadow:3px 1px #16211f;
     letter-spacing: 8px; color: var(--text-color);
 }
 
 .nav-left{
     display: flex;
-    /* flex-wrap: auto; */
     align-items: center;
-    /* justify-content: center; */
     width: auto;
     min-height: 42px;
     background-color: var(--nav-box-backgrnd);
@@ -131,13 +125,12 @@ a:hover{
     height: 42px;
     align-items: center;
     justify-content: center;
-    height: 45px;
     background-color:var(--nav-box-backgrnd);
 }
 
 .pick_return{
     display: flex;
-    width: auto;
+    width: 70%;
     min-height: 80px;
     gap: 30px ;
     margin-top: 20px;
@@ -147,18 +140,13 @@ a:hover{
 
 .pickup, .return{
     display: flex;
-    min-width: 32vw;
+    width: 120%;
     min-height: 67px;
     justify-content: space-between;
     background-color: var(--nav-box-backgrnd);
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 8px;
-}
-
-.pickup_date{
-    height: 23px;
-    font-size: .7em;
 }
 
 .leftTopPickDate{
@@ -170,7 +158,6 @@ a:hover{
     max-width: 135px;
     height: 29px;
     position: relative;
-    left: 70%;
 }
 
 .col input{
@@ -182,8 +169,7 @@ a:hover{
 .selectBtn{
     display: flex;
     width: 8%;
-    /* height: 42% !important; */
-    background-color: var(--nav-box-backgrnd);
+    background-color: darkslategray;
     padding: 5px;
     position: relative;
     top: 60px;
@@ -192,27 +178,19 @@ a:hover{
     margin-bottom: 5%;
     font-family: 'Kaushan Script', normal;
     font-size: 18px;
-    color: rgba(255, 255, 255, 0.568); 
+    color: white; 
     box-shadow: 0px 0px 4px 1px rgb(15, 58, 58); 
     border-radius: 12px;
 }
 
-/* .caretButton ion-icon{
-    display: flex;
-    margin: 20px;
-    width: 120px;
-    height: 240px;
-    color:#575050;
-    overflow:hidden;
-    align-items: center;
-    box-shadow: 0px 0px 10px .1px var(--nav-box-backgrnd); 
-} */
-    /* Hardcoded transition time */
-    /* --transition-time: .15s; */
+.selectBtn:hover{
+    box-shadow: inset 1px 2px 3px 2px   #323730 ;
+    border-style: none;
+}
 
 .display-pick{
     display: flex;
-    width: auto;
+    width: 900px;
     height: auto;
 }
 
@@ -229,8 +207,6 @@ footer{
 .title-footer{
     display: flex;
     font: 400 14px 'Kaushan Script', normal;
-    /* align-items: center; */
-    /* justify-content: center; */
     text-shadow:1px 1px #16211f;
     letter-spacing: 8px; 
     color: var(--text-color);
@@ -253,20 +229,19 @@ footer div button{
 footer div p{
     display: flex;
     margin-bottom: 0;
-    /* justify-content: baseline; */
 }
 
 .bookings{
-    width: 50vw;
+    width: 70%;
     margin: auto;
 }
 
 .userInfo{
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 50%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 80px;
     gap: 15px;
 }
 
@@ -274,4 +249,22 @@ footer div p{
     border: none;
     outline: none;
     background-color: rgba(255, 255, 255, 0.3);
+}
+
+.about-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    align-items:stretch ;
+    margin-top:40px;
+}
+
+.about-page span{
+    text-shadow:2px 1px #16211f;
+    letter-spacing: 8px; 
+    color: var(--text-color);
+    font: 400 20px 'Kaushan Script', normal;
 }
