@@ -24,7 +24,7 @@ DB_NAME=car_rental
 
 Or, you could copy your connection string code from your database server, 
   - if you are using postgresql from www.bit.io like I did, your code would look very similar to this:
-  ![image](https://github.com/DJRoche509/maBagnole-Rental/assets/100164051/e32f9604-719f-4a8d-baf9-985951389c91)
+  ![image](https://github.com/DJRoche509/maBagnole-Rental/assets/100164051/7bc3e664-f489-46ac-b0ed-5cb503ce84fa)
  
   - Next, create a VARIABLE_NAME in that .env file and past/set that variable equal to the connection code.
     ```
