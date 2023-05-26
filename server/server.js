@@ -1,60 +1,39 @@
 const express = require("express");
 const cors = require('cors');
-
-
-const {SERVER_PORT} = process.env;
-
-// Create a new Sequelize instance
-const sequelize = new Sequelize("database", "username", "password", {
-  host: "localhost",
-  dialect: "mysql",
-});
-
-// Define a new model for the booking
-const Booking = sequelize.define("Booking", {
-  pickupDate: {
-    type: DataTypes.DATEONLY,
-    allowNull: false,
-  },
-  pickupTime: {
-    type: DataTypes.TIME,
-    allowNull: false,
-  },
-  returnDate: {
-    type: DataTypes.DATEONLY,
-    allowNull: false,
-  },
-  returnTime: {
-    type: DataTypes.TIME,
-    allowNull: false,
- });
-
-// Sync the model with the database
-sequelize.sync();
+require('dotenv').config();
 
 // Create a new Express app
 const app = express();
 
-// Use the body-parser middleware to parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
+const {SERVER_PORT} = process.env;
+const {seed, getCustomers, getBookings, getCarID, getCars, createBooking, editBooking, editUserInfo, deleteBooking} = require('./controller')
 
-// Define a route that handles the form submission
-app.post("/booking", async (req, res), next) => {
-  try {
-    // Get the selected date and time values from the request body
-    const { pickupDate, pickupTime, returnDate, returnTime } = req.body;
+app.use(express.json());
+app.use(cors());
 
-    // Create a new Booking record in the database
-    await Booking.create({ pickupDate, pickupTime, returnDate, returnTime });
+// Serve static files from the app
+app.use(express.static(`${__dirname}/public`));
 
-    // Redirect the user to a confirmation page
-    res.redirect("/confirmation.html");
-  } catch (error) {
-    next(error);
-  }
-});
+// Seed the database
+app.post('/seed', seed)
+
+// Get all availabe cars
+// app.get('/api/cars', getCars);
+// Get all bookings
+app.get('/api/bookings/:id', getBookings);
+// create a new booking
+app.post('/api/booking', createBooking);
+// create a new booking
+// app.get('/api/customers', getCustomers);
+app.get('/api/getCarID/:id', getCarID)
+
+// Delete a booking
+app.delete('/api/deletebooking/:id', deleteBooking);
+
+//entry point for our website
+app.get("/", (req,res) => {
+  res.sendFile(`${__dirname}/public/index.html`)
+})
 
 // Start the server
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+app.listen(SERVER_PORT, () => console.log(`Jamming on port: ${SERVER_PORT}`));
