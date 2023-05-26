@@ -1,0 +1,114 @@
+.contact-page input{
+    margin-top:8px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-page input:hover{
+    border: 1px solid rgba(110, 204, 224, 0.91) ;
+}
+
+.contact-page input:focus{
+    outline:none;
+    /* border: none;
+    background-color: rgba(255, 255, 255, 0.3); */
+}
+
+#one input, #two input{
+    width:60%;
+    height: 5vh;
+}
+
+.names_section div{
+    display: inline-block;
+    padding-right: 8px;
+    width: 49%;
+}
+
+.contact-page h2{
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    border-bottom:1px groove #48575abc;
+    width: fit-content;
+    padding: 8px;
+    letter-spacing: 2px;
+}
+
+.names_section{
+    display: block ;
+    width: 96%;
+}
+
+.contact-page div{
+    margin-bottom: 10px;
+}
+
+.input_email_size{
+    width: 75%;
+    height: 5vh;
+}
+
+.message_area{
+    width: 75%;
+    height:110px;
+    margin-top:8px;
+    margin-bottom:5rem;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);    
+}
+.message_area:hover{
+    border: 1px solid #078ddb ;
+}
+
+.message_area:focus{
+    /* background-color:rgba(149, 178, 239, 0.2) ; */
+    outline:none;
+}
+
+.contact-page  ::placeholder{
+    opacity: .4;
+}
+
+.contact-page button{
+    border-style: none;
+    background-color: darkslategray;
+    width: 70px;
+    height: 35px;
+    position: relative;
+   align-self: center;
+    color: white;
+    border-radius: 12px;
+}
+.contact-page button:hover{
+    box-shadow: inset 1px 2px 3px 2px   #323730 ;
+    border-style: none;
+}
+
+.lower_div_centered{
+    position: relative;
+    left: 30%;
+    padding-right: 15px;    
+}
+
+.contact-page i{
+    color: rgb(81, 81, 106);
+    padding-right: 5px; 
+}
+
+.contact-page{
+    width: 75%;
+    margin: auto;
+}
+
+.cent{
+    position: relative;
+    left: 10% ;
+}
+
+.carInfo_section div{
+    display: flex;
+    gap: 5%;
+}
