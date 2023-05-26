@@ -1,42 +1,52 @@
 
-
 .single_car_display{
     display: flex;
     padding-top: 100px;
     justify-content: center;
     align-items: center;
-    position: relative;
+    /* position: relative; */
 }
 
-.single_car_display img{
-    max-width: 60vw;
-    max-height: 60vh;
+.carousel-item img{
+    width: 40vw;
+    height: 40vh;
     border-radius: 215px;
     margin: auto;
+    /* border-bottom-right-radius: 0; */
 }
 
 
 /* Animated arrow button */
+.carousel-control-next-icon:hover {
+    width: 80px !important;
+    height: 100px!important;
+    /* border: 1px solid blue; */
+}
+.carousel-control-prev-icon:hover {
+    width: 80px !important;
+    height: 100px!important;
+    /* background: aqua; */
+    border: 1px solid blue;
+}
+
+/* 
 .arrow {
     cursor: pointer;
     max-height: 120px;   
-    position: relative;
     transition: transform 0.1s;
     min-width: 80px;
 }
 .backward{
    left: 20px;
    transform: rotate(0.50turn);
-   position: relative;
 }
 .forward{
     right:20px;
-    position: relative;
+    z-index: 101;
 }
 .arrow-top, .arrow-bottom {
   background-color: #666;
   height: 4px;
-  /* left: -5px; */
   position: absolute;
   top: 50%;
   width: 100%;
@@ -90,9 +100,8 @@
     transition-delay: 0.15s;
 }
 .backward:active{
-  /* transform: translateX(-5%) scale(0.9); */
   transform: rotate(0.50 turn);  
-}
+} */
 
 .carInfo_section{
   display: flex;
@@ -103,4 +112,13 @@
   letter-spacing: .1em;
   word-spacing: .2em;
   gap: 3px;
+}
+
+.display-pick{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    padding-top: 100px;
+    justify-content: center;
+    align-items: center;
 }
