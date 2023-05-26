@@ -32,7 +32,7 @@ app.delete('/api/deletebooking/:id', deleteBooking);
 
 //entry point for our website
 app.get("/", (req,res) => {
-  res.sendFile(`${__dirname}../public/index.html`)
+  res.sendFile(`${__dirname}/../public/index.html`)
 })
 
 // Start the server
