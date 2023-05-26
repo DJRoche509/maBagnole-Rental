@@ -12,7 +12,8 @@ app.use(express.json());
 app.use(cors());
 
 // Serve static files from the app
-app.use(express.static(`${__dirname}/public`));
+// app.use(express.static(`${__dirname}/public`));
+app.use(express.static(`public`));
 
 // Seed the database
 app.post('/seed', seed)
@@ -32,7 +33,7 @@ app.delete('/api/deletebooking/:id', deleteBooking);
 
 //entry point for our website
 app.get("/", (req,res) => {
-  res.sendFile(`${__dirname}/public/index.html`)
+  res.sendFile(`${__dirname}../public/index.html`)
 })
 
 // Start the server
